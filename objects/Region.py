@@ -5,3 +5,6 @@ class Region:
 
     def toString(self):
         return ("{" + "ID:" + str(self.regionID) + " Name:" + str(self.regionName) + "}")
+
+    def getAttributes(self):
+        return [self.regionID, self.regionName];
