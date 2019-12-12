@@ -1,4 +1,5 @@
 from objects import Region, Server, UserAccount
+import os
 import SQLator
 #24 by 36 inch poster
 class SystemGen:
@@ -16,9 +17,9 @@ class SystemGen:
     def start(self):
         print("[SYSTEM GENERATOR]")
         self.resetLists()
-        self.generateRegions()
+        self.generateRegions("sql/regions.sql")
 
-    def generateRegions(self):
+    def generateRegions(self, filePath):
         regionConfig = open("config/regions.txt", "r")
         regionLine = regionConfig.readline().rstrip('\n')
         id = 0
@@ -28,7 +29,7 @@ class SystemGen:
             id = id + 1
             regionLine = regionConfig.readline().rstrip('\n')
         for i in range(0, len(self.regions)):
-            self.sqlmaker.insertify("Regions", self.regions[i].getAttributes())
+            self.sqlmaker.insertify("Regions", self.regions[i].getAttributes(), filePath)
         regionConfig.close();
 
     def generateServers(self):
