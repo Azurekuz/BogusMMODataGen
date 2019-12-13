@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84fea5be-df65-4410-9872-c5dbfa051a81" name="Default Changelist" comment="" />
+    <list default="true" id="84fea5be-df65-4410-9872-c5dbfa051a81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SystemGen.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,8 @@
       <option name="presentableId" value="Default" />
       <updated>1576163106631</updated>
       <workItem from="1576163108099" duration="83000" />
-      <workItem from="1576163247193" duration="2093000" />
+      <workItem from="1576163247193" duration="3243000" />
+      <workItem from="1576186224920" duration="1200000" />
     </task>
     <servers />
   </component>
@@ -108,6 +112,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576165368548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576171367553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -28,6 +28,8 @@ class SystemGen:
             print(self.regions[len(self.regions)-1].toString())
             id = id + 1
             regionLine = regionConfig.readline().rstrip('\n')
+        if os.path.exists(filePath):
+            os.remove(filePath)
         for i in range(0, len(self.regions)):
             self.sqlmaker.insertify("Regions", self.regions[i].getAttributes(), filePath)
         regionConfig.close();
