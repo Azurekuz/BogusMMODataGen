@@ -10,7 +10,13 @@ class SQLator:
         insertSQL = "INSERT INTO " + tableName + " VALUES("
         for i in range(0, len(valueArray)):
             if(i != len(valueArray)-1):
-                insertSQL = insertSQL + str(valueArray[i]) + ","
+                if(type(valueArray[i]) is int or type(valueArray[i]) is float):
+                    insertSQL = insertSQL + str(valueArray[i]) + ","
+                elif(type(valueArray[i]) is str):
+                    insertSQL = insertSQL + "'" +str(valueArray[i]) + "',"
             else:
-                insertSQL = insertSQL + str(valueArray[i]) + ");"
+                if (type(valueArray[i]) is int or type(valueArray[i]) is float):
+                    insertSQL = insertSQL + str(valueArray[i]) + ");"
+                elif (type(valueArray[i]) is str):
+                    insertSQL = insertSQL + "'" + str(valueArray[i]) + "');"
         curFile.write(insertSQL + '\n')
