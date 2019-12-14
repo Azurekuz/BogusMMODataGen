@@ -9,7 +9,7 @@ class EconomyGen:
         self.sqlmaker = SQLator.SQLator()
 
     def start(self):
-        print("[SYSTEM GENERATOR]")
+        print("[ECONOMY GENERATOR]")
         self.resetLists()
         self.genItems("sql/items.sql")
 

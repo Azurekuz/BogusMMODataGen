@@ -39,6 +39,8 @@ class MMOGenNexus:
 
             if(userChoice == 1):
                 self.systemGen.start()
+            elif(userChoice == 2):
+                self.contentGen.start()
             elif(userChoice == 4):
                 self.economyGen.start()
             elif(userChoice == 5):

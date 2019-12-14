@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84fea5be-df65-4410-9872-c5dbfa051a81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentGen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EconomyGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/EconomyGen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MMOGenNexus.py" beforeDir="false" afterPath="$PROJECT_DIR$/MMOGenNexus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQLator.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQLator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/Item.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/Item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/regions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/regions.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SystemGen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/Expansion.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/Expansion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/Location.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/Location.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/NPC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +19,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Ut5ZUc5MyOuxQ4E1yMym9qI2t2" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -83,6 +104,16 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -96,7 +127,8 @@
       <workItem from="1576163108099" duration="83000" />
       <workItem from="1576163247193" duration="3243000" />
       <workItem from="1576186224920" duration="1229000" />
-      <workItem from="1576246314898" duration="1676000" />
+      <workItem from="1576246314898" duration="2642000" />
+      <workItem from="1576269658030" duration="9643000" />
     </task>
     <servers />
   </component>
@@ -117,6 +149,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576247442886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576281440273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
