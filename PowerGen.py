@@ -1,8 +1,13 @@
+from objects import Guild
+import os, random
+import SQLator
 class PowerGen:
     def __init__(self):
-        pass
+        self.guilds = []
+        self.guildMembers = []
+        self.sqlmaker = SQLator.SQLator()
 
-    def genPlayerCharacters(self):
+    def start(self, ):
         pass
 
     def genGuilds(self):

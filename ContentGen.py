@@ -46,7 +46,7 @@ class ContentGen:
             locLine = locationConfig.readline().rstrip('\n')
         if os.path.exists(filePath):
             os.remove(filePath)
-        for i in range(0, len(self.NPCs)):
+        for i in range(0, len(self.locations)):
             self.sqlmaker.insertify("Locations", self.locations[i].getAttributes(), filePath)
         locationConfig.close();
 
