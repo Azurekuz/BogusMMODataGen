@@ -288,9 +288,9 @@ Delimira
 Glynqirelle
 Azariah
 Faeydark
-Shalana 
+Shalana
 Therel
-Lazziar 
+Lazziar
 Elgeiros
 Mylaela
 Luharice
@@ -323,9 +323,7 @@ Rumblebelly
 Berthefried
 Stoor
 Itta
-Gammidge
 Olivia
-Leafwalker
 Cunegonde
 Farfoot
 Chlodosind

@@ -4,8 +4,6 @@ import SQLator
 class EconomyGen:
     def __init__(self):
         self.items = []
-        self.auctionEntries = []
-        self.auctionBids = []
         self.sqlmaker = SQLator.SQLator()
 
     def start(self):
@@ -15,8 +13,6 @@ class EconomyGen:
 
     def resetLists(self):
         self.items[:] = []
-        self.auctionEntries[:] = []
-        self.auctionBids[:] = []
 
     def genItems(self, filePath):
         itemConfig= open("config/items.txt", "r")
@@ -32,9 +28,3 @@ class EconomyGen:
         for i in range(0, len(self.items)):
             self.sqlmaker.insertify("Items", self.items[i].getAttributes(), filePath)
         itemConfig.close();
-
-    def genAuctionHouse(self):
-        pass
-
-    def genAuctionBids(self):
-        pass

@@ -21,6 +21,9 @@ class MMOGenNexus:
         print()
         self.mainMenu()
 
+    def generateAll(self):
+        pass
+
     def mainMenu(self):
         while(True):
             print("[MAIN MENU]")
@@ -41,6 +44,8 @@ class MMOGenNexus:
                 self.systemGen.start()
             elif(userChoice == 2):
                 self.contentGen.start()
+                self.contentGen.genQuestRewards("sql/questRewards.sql", self.economyGen.items)
+                #self.contentGen.completeQuests("sql/questsComplete.sql", self.systemGen.playerCharacters)
             elif(userChoice == 4):
                 self.economyGen.start()
             elif(userChoice == 5):

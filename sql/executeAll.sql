@@ -6,4 +6,6 @@ BEGIN TRANSACTION;
 	READ("expansions.sql");
 	READ("locations.sql");
 	READ("npcs.sql");
+	READ("quests.sql");
+	READ("playerChar.sql");
 COMMIT;

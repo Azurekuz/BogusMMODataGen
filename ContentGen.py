@@ -7,6 +7,7 @@ class ContentGen:
         self.locations = []
         self.NPCs = []
         self.quests = []
+        self.questRewards = []
         self.sqlmaker = SQLator.SQLator()
 
     def resetLists(self):
@@ -21,6 +22,7 @@ class ContentGen:
         self.genExpansions("sql/expansions.sql")
         self.genLocations("sql/locations.sql")
         self.genNPCs("sql/npcs.sql", 8000)
+        self.genQuests("sql/quests.sql", 1000)
 
     def genExpansions(self, filePath):
         expacConfig = open("config/expansions.txt", "r")
@@ -66,7 +68,7 @@ class ContentGen:
                     ranLoc = random.randint(0, len(self.locations) - 1)
                 npcInstances[npcLine].append(ranLoc);
                 self.NPCs.append(NPC.NPC(id, npcLine, ranLoc))
-                print(self.NPCs[len(self.NPCs)-1].toString())
+                #print(self.NPCs[len(self.NPCs)-1].toString())
                 npcNum = npcNum - 1
                 id = id + 1
                 npcLine = npcConfig.readline().rstrip('\n')
@@ -78,11 +80,51 @@ class ContentGen:
             self.sqlmaker.insertify("NPCs", self.NPCs[i].getAttributes(), filePath)
         npcConfig.close();
 
-    def genQuests(self):
-        pass
+    def genQuests(self, filePath, limit=0):
+        questConfig = open("config/quests.txt", "r")
+        questLine = questConfig.readline().rstrip('\n')
+        id = 0
+        quests = []
+        numQuests = limit;
+        questParts = {};
+        while questLine:
+            if questLine[0] != " " or questLine[0] != "":
+                self.quests.append(Quest.Quest(id, questLine, random.randint(0, len(self.NPCs)-1)))
+                # print(self.regions[len(self.regions)-1].toString())
+                id = id + 1
+                quests.append(questLine)
+                questParts[questLine] = 2
+                numQuests = numQuests - 1
+                questLine = questConfig.readline().rstrip('\n')
 
-    def completeQuests(self):
-        pass
+        while numQuests > 0:
+            ranQuest = quests[random.randint(0, len(quests)-1)];
+            self.quests.append(Quest.Quest(id, ranQuest + " " + str(questParts[ranQuest]), random.randint(0, len(self.NPCs) - 1)))
+            id = id + 1
+            numQuests = numQuests - 1
+            questParts[ranQuest] = questParts[ranQuest] + 1
+        if os.path.exists(filePath):
+            os.remove(filePath)
+        for i in range(0, len(self.quests)):
+            self.sqlmaker.insertify("Quests", self.quests[i].getAttributes(), filePath)
+        questConfig.close();
 
-    def genQuestRewards(self):
-        pass
+    def completeQuests(self, filePath, players):
+        questCompletion = {}
+        if os.path.exists(filePath):
+            os.remove(filePath)
+        for i in range(0, len(players)):
+            questCompletion = []
+            ranNum = random.randint(0, 20)
+            while ranNum in questCompletion:
+                ranNum = random.randint(0, len(self.quests) - 1)
+            while ranNum > 0:
+                self.sqlmaker.insertify("QuestComplete", [i, random.randint(0, len(self.quests)-1)], filePath)
+                ranNum = ranNum - 1
+                questCompletion.append(ranNum)
+
+    def genQuestRewards(self, filePath, items, limit=0):
+        if os.path.exists(filePath):
+            os.remove(filePath)
+        for i in range(0, len(self.quests)):
+            self.sqlmaker.insertify("QuestReward", [i, random.randint(0, len(items)-1)], filePath)
