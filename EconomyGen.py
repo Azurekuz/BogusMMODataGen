@@ -15,12 +15,13 @@ class EconomyGen:
         self.items[:] = []
 
     def genItems(self, filePath):
+        print("\t" + "[GEN ITEMS]")
         itemConfig= open("config/items.txt", "r")
         itemLine = itemConfig.readline().rstrip('\n')
         id = 0
         while itemLine:
             self.items.append(Item.Item(id, itemLine))
-            print(self.items[len(self.items) - 1].toString())
+            #print(self.items[len(self.items) - 1].toString())
             id = id + 1
             itemLine = itemConfig.readline().rstrip('\n')
         if os.path.exists(filePath):

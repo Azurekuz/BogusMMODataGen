@@ -18,6 +18,7 @@ class SystemGen:
         self.servers[:] = []
         self.users[:] = []
         self.playerCharacters[:] = []
+        self.hasExpansions[:] = []
         self.auctionEntries[:] = []
         self.auctionBids[:] = []
 
@@ -31,6 +32,7 @@ class SystemGen:
         #self.genPlayerCharacters("sql/playerCharacters.sql", 30000)
 
     def generateRegions(self, filePath):
+        print("\t" + "[GEN REGIONS]")
         regionConfig = open("config/regions.txt", "r")
         regionLine = regionConfig.readline().rstrip('\n')
         id = 0
@@ -46,6 +48,7 @@ class SystemGen:
         regionConfig.close();
 
     def generateServers(self, filePath, limit=25):
+        print("\t" + "[GEN SERVERS]")
         serverConfig = open("config/servers.txt", "r")
         serverLine = serverConfig.readline().rstrip('\n')
         id = 0
@@ -71,6 +74,7 @@ class SystemGen:
         serverConfig.close();
 
     def generateUsers(self, filePath, limit):
+        print("\t" + "[GEN USERS]")
         userConfig = open("config/usernames.txt", "r")
         userLine = userConfig.readline().rstrip('\n')
         usernames = []
@@ -115,6 +119,7 @@ class SystemGen:
             self.sqlmaker.insertify("Users", self.users[i].getAttributes(), filePath)
 
     def genPlayerCharacters(self, filePath, limit):
+        print("\t" + "[GEN PLAYER CHARS]")
         playerConfig = open("config/playernames.txt", "r")
         playerLine = playerConfig.readline().rstrip('\n')
         numPlayers = limit
@@ -151,6 +156,7 @@ class SystemGen:
 
 
     def genUserExpansions(self, filePath, expansions):
+        print("\t" + "[GIVING EXPANSIONS]")
         for i in range(0, len(self.users)):
             ranExpansionNum = random.randint(1, len(expansions)-1)
             for ii in range(0, ranExpansionNum):
@@ -184,6 +190,7 @@ class SystemGen:
         return newDatePart
 
     def genAuctionHouse(self, items, filePath, approxlimit):
+        print("\t" + "[GEN AUCTION HOUSE]")
         id = 0
         numEntries = approxlimit
         for i in range(0,len(self.playerCharacters)):
@@ -192,8 +199,8 @@ class SystemGen:
                 while(entries > 0):
                     price = random.randint(10, 999999999)
                     self.auctionEntries.append(AuctionEntry.AuctionEntry(id, random.randint(0, len(items)-1), price,
-                                                                         price*random.randint(2,5),
-                                                                         random.randint(0, len(self.playerCharacters)-1)));
+                                                                         price*random.randint(2,5), self.genRanDate(2018, 2019),
+                                                                         random.randint(0, len(self.playerCharacters)-1)))
                     entries = entries - 1
                     numEntries = numEntries - 1
                     id = id + 1
@@ -204,7 +211,8 @@ class SystemGen:
         for i in range(0, len(self.auctionEntries)):
             self.sqlmaker.insertify("AuctionHouse", self.auctionEntries[i].getAttributes(), filePath)
 
-    def genAuctionBids(self, filePath, items, limit):
+    def genAuctionBids(self, filePath, limit):
+        print("\t" + "[GEN AUCTION BIDS]")
         id = 0
         numBids = limit
         for i in range(0,len(self.playerCharacters)):
@@ -213,9 +221,15 @@ class SystemGen:
             if(random.randint(0, 100) > 45 and self.auctionEntries[ranEntry].playerID != self.playerCharacters[i] and self.auctionEntries[ranEntry].serverID == self.playerCharacters[i].serverID):
                 while(entries > 0):
                     price = random.randint(10, 999999999)
+                    entries = entries - 1
                     self.auctionEntries.append(AuctionEntry.AuctionEntry(id, random.randint(0, len(self.playerCharacters)-1), price,
                                                                          self.auctionEntries[ranEntry].startPrice + random.randint(1, self.auctionEntries[ranEntry].startPrice*1.5),
                                                                          ranEntry));
-                    entries = entries - 1
-                    numBids = numBids - 1
                     id = id + 1
+            numBids = numBids - 1
+            if numBids <= 0:
+                break
+        if os.path.exists(filePath):
+            os.remove(filePath)
+        for i in range(0, len(self.auctionBids)):
+            self.sqlmaker.insertify("AuctionBids", self.auctionBids[i].getAttributes(), filePath)

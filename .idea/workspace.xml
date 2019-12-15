@@ -8,13 +8,14 @@
       <change beforePath="$PROJECT_DIR$/MMOGenNexus.py" beforeDir="false" afterPath="$PROJECT_DIR$/MMOGenNexus.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PowerGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/PowerGen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SystemGen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SystemGen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/playernames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/playernames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/AuctionBid.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/AuctionBid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects/AuctionEntry.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/AuctionEntry.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/PlayerCharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/PlayerCharacter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/Quest.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/Quest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/executeAll.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/executeAll.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/Guild.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/Guild.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/locations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/locations.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/npcs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/npcs.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/playerChar.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/playerChar.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/questRewards.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/questRewards.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/quests.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/quests.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/servers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/servers.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/users.sql" afterDir="false" />
     </list>
@@ -133,7 +134,7 @@
       <workItem from="1576163247193" duration="3243000" />
       <workItem from="1576186224920" duration="1229000" />
       <workItem from="1576246314898" duration="2642000" />
-      <workItem from="1576269658030" duration="44833000" />
+      <workItem from="1576269658030" duration="48775000" />
     </task>
     <servers />
   </component>
@@ -154,6 +155,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576361959850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MDGit$main.coverage" NAME="main Coverage Results" MODIFIED="1576417895349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -25,6 +25,7 @@ class ContentGen:
         self.genQuests("sql/quests.sql", 1000)
 
     def genExpansions(self, filePath):
+        print("\t" + "[GEN EXPANSIONS]")
         expacConfig = open("config/expansions.txt", "r")
         expacLine = expacConfig.readline().rstrip('\n')
         id = 0
@@ -39,6 +40,7 @@ class ContentGen:
         expacConfig.close();
 
     def genLocations(self, filePath):
+        print("\t" + "[GEN LOCATIONS]")
         locationConfig = open("config/locations.txt", "r")
         locLine = locationConfig.readline().rstrip('\n')
         id = 0
@@ -53,6 +55,7 @@ class ContentGen:
         locationConfig.close();
 
     def genNPCs(self, filePath, limit):
+        print("\t" + "[GEN NPCs]")
         npcConfig = open("config/npcs.txt", "r")
         npcLine = npcConfig.readline().rstrip('\n')
         resetPos = npcConfig.tell()
@@ -81,6 +84,7 @@ class ContentGen:
         npcConfig.close();
 
     def genQuests(self, filePath, limit=0):
+        print("\t" + "[GEN QUESTS]")
         questConfig = open("config/quests.txt", "r")
         questLine = questConfig.readline().rstrip('\n')
         id = 0
@@ -110,6 +114,7 @@ class ContentGen:
         questConfig.close();
 
     def completeQuests(self, filePath, players):
+        print("\t" + "[COMPLETE QUESTS]")
         questCompletion = {}
         if os.path.exists(filePath):
             os.remove(filePath)
@@ -124,6 +129,7 @@ class ContentGen:
                 questCompletion.append(ranNum)
 
     def genQuestRewards(self, filePath, items, limit=0):
+        print("\t" + "[GEN REWARDS]")
         if os.path.exists(filePath):
             os.remove(filePath)
         for i in range(0, len(self.quests)):
